@@ -10,13 +10,16 @@ public class ZombieCombat : MonoBehaviour, IDie, IReact, IOnSpecialSkill, IMove
         zombieController = GetComponent<Animator>();
     }
 
+    bool inTheArea = false;
     private void OnTriggerEnter(Collider other)
     {
         ToAttack();
+        inTheArea = true;
     }
     private void OnTriggerExit(Collider other)
     {
         zombieController.SetTrigger("trOutAttack");
+        inTheArea = false;
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -69,7 +72,7 @@ public class ZombieCombat : MonoBehaviour, IDie, IReact, IOnSpecialSkill, IMove
     Transform theRightHand;
     public void CheckDamageAnimationEvent()
     {
-        if (Physics.CheckSphere(theRightHand.position, 0.2f))
+        if (Physics.CheckSphere(theRightHand.position, 0.2f) && inTheArea)
         {
             //IReact iReact = (IReact)communicator;
             //iReact?.React();

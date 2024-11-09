@@ -56,7 +56,7 @@ public class FPPCamera : MonoBehaviour, IOrderOfRunningStart
         else
         {
             joystickMove = new Vector3(joystick.Horizontal, joystick.Vertical, 0);
-            transform.position += joystickMove * 5 * Time.deltaTime;
+            transform.position += joystickMove * 7.5f * Time.deltaTime;
         }
     }
 
@@ -93,7 +93,7 @@ public class FPPCamera : MonoBehaviour, IOrderOfRunningStart
             }
             else if (eTime < 0.25f)
             {
-                transform.rotation *= Quaternion.Euler(70/3 * Time.deltaTime, 0f, -0f);
+                transform.rotation *= Quaternion.Euler(70 / 3 * Time.deltaTime, 0f, -0f);
                 eTime += Time.deltaTime;
             }
             else

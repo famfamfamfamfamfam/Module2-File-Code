@@ -376,7 +376,6 @@ GameObject:
   m_Component:
   - component: {fileID: 102060456}
   - component: {fileID: 102060455}
-  - component: {fileID: 102060457}
   - component: {fileID: 102060458}
   m_Layer: 0
   m_Name: FPP
@@ -451,14 +450,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &102060457
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102060453}
-  m_Enabled: 1
 --- !u!114 &102060458
 MonoBehaviour:
   m_ObjectHideFlags: 0

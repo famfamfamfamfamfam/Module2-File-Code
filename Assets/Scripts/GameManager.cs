@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     List<GameObject> objsWaitingToRun;
     private void Start()
     {
+        Application.targetFrameRate = 60;
         thresold = 1;
         weaponAmount = 100;
         charHealth = 100;

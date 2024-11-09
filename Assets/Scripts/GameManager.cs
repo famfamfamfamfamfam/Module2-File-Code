@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private void Awake()
     {
+        instance = null;
         instance = this;
     }
 
@@ -131,7 +132,7 @@ public class GameManager : MonoBehaviour
             HasChanged?.Invoke("turnOffButton");
             HasChanged?.Invoke("specialEnergy");
         }
-        if (Time.timeScale == 0)
+        if (Time.timeScale == 0 && gameResult == null)
         {
             CommunicateManager.instance.SpecialSkill("Zombie1")?.OnSpecialSkill();
             CommunicateManager.instance.SpecialSkill("TheWall")?.OnSpecialSkill();

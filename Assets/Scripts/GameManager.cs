@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private void Awake()
     {
-        instance = null;
+        if (instance != null)
+            Destroy(instance.gameObject);
         instance = this;
     }
 
